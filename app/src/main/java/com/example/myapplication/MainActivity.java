@@ -1,45 +1,37 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.Toast;
+import android.util.Log;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.snackbar.Snackbar;
-
+import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // text_edit
-        //setContentView(R.layout.activity_main_text_edit);
-        //snackbar
-        //setContentView(R.layout.activity_main_snackbar);
-        //BottomSheet
-        setContentView(R.layout.activity_main_bottom_sheet);
+        // buttons_activity
+        //setContentView(R.layout.buttons_activity);
+        // ToolbarActivity
+        //setContentView(R.layout.toolbar_activity);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        LinearLayout llBottomSheet = findViewById(R.id.bottom_sheet);
-
-        // init the bottom sheet behavior
-        BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(llBottomSheet);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-//    public void onClickButton(final View view) {
-//        Snackbar snackbar;
-//        snackbar = Snackbar.make(view, "Работает", Snackbar.LENGTH_LONG)
-//                .setAction("Кнопка", SnackbarOnClickListner);
-//        snackbar.show();
-//    }
-//
-//    View.OnClickListener SnackbarOnClickListner = new View.OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//            Toast.makeText(getApplicationContext(), "SnackBar OnClickListener", Toast.LENGTH_LONG).show();
-//        }
-//    };
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int i = item.getItemId();
+        switch (i) {
+            case android.R.id.home:
+                Log.d("Кнопка домой", "onOptionsItemSelected");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
