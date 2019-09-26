@@ -8,12 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name = "CounterStyle" parent = "TextAppearance.AppCompat.Small">
-        <item name = "android:textColor" > @android:color/holo_red_dark </item>
+    <style name="CounterStyle" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@android:color/holo_red_dark</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay">AppBarOverlay</style>
 
     <style name="AppTheme.PopupOverlay">PopupOverlay</style>
+
+    <style name="AppTheme.NoActionBar.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
